@@ -104,6 +104,13 @@
     font-size: 14px;
     margin: 0 0 16px;
 }
+.leyenda-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px 18px;
+    font-size: 14px;
+}
+
 /* BOTÓN ACERCA DEL PROYECTO */
 
 .leyenda-desplegable,
@@ -268,7 +275,7 @@
     padding-top: 14px;
 }
 
-/* Diseño adaptable a celulares */
+/* Diseño adaptable a celulares here */
 
 @media (max-width: 500px) {
     .autoridades-grid {
@@ -286,7 +293,7 @@
             font-family: Arial, sans-serif;
         }
 
-        /Indicadores y gráficos del relevamiento/
+        /* Indicadores y gráficos del relevamiento */
         .panel-estadisticas { background:#fff; border:1px solid var(--borde); border-radius:12px; padding:18px 20px; margin-bottom:16px; }
         .panel-estadisticas h2 { color:var(--verde-oscuro); font-size:18px; margin:0 0 14px; }
         .estadisticas-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; }
@@ -379,22 +386,8 @@
     <div class="leyenda-contenido">
         <p>Cada símbolo representa un sector productivo.</p>
 
-        <div class="leyenda-grid">
-            <div>🔩 Metalurgia y siderurgia</div>
-            <div>🚗 Automotriz y autopartes</div>
-            <div>🧪 Química</div>
-            <div>⚡ Energía</div>
-            <div>☢️ Energía nuclear</div>
-            <div>🌾 Agroindustria</div>
-            <div>🚛 Logística y transporte</div>
-            <div>🏗️ Construcción e ingeniería</div>
-            <div>🍞 Alimentos y bebidas</div>
-            <div>🌳 Forestoindustria</div>
-            <div>💻 Tecnología y electrónica</div>
-            <div>🏭 Manufactura y otros sectores</div>
-            <div>🏢 Servicios</div>
-            <div>🎓 Educación</div>
-            <div>⛏️ Minería</div>
+        <div class="leyenda-grid" id="leyendaSectores" aria-live="polite">
+            <div>Las referencias se cargarán junto con las empresas.</div>
         </div>
     </div>
 </details>
@@ -521,7 +514,7 @@
             }
         ).addTo(mapa);
 
-        // Agrupa marcadores cercanos sin cambiar sus emojis individuales.
+        // esto agrupa marcadores cercanos sin cambiar sus emojis.
         const grupoMarcadores = L.markerClusterGroup({
             showCoverageOnHover: false,
             spiderfyOnMaxZoom: true,
@@ -544,9 +537,8 @@
             totalLocalidadesEl.textContent = new Set(fichasMapa.map(f => f.ciudad)).size;
             totalVisiblesEl.textContent = visibles.length;
             const conteos = new Map();
-            visibles.forEach(marcador => {
-                const ficha = fichasMapa.find(f => f.marcador === marcador);
-                if (ficha) conteos.set(ficha.sector, (conteos.get(ficha.sector) || 0) + 1);
+            visibles.forEach(ficha => {
+                conteos.set(ficha.sector, (conteos.get(ficha.sector) || 0) + 1);
             });
             const ordenados = [...conteos.entries()].sort((a,b) => b[1] - a[1] || a[0].localeCompare(b[0],"es"));
             const maximo = ordenados.length ? ordenados[0][1] : 1;
@@ -615,7 +607,9 @@
             }[caracter]));
         }
 
-        function crearEnlace(url, texto) {
+// enlaces
+
+        function crearEnlaceFicha(url, texto, emoji) {
             if (!url) return "";
 
             let direccion = String(url).trim();
@@ -630,85 +624,86 @@
                 <a href="${escaparHTML(direccion)}"
                    target="_blank"
                    rel="noopener noreferrer">
-                    ${escaparHTML(texto)}
-                </a><br>
+                    ${emoji} ${escaparHTML(texto)}
+                </a>
             `;
         }
-// enlaces
+        // acá agregué emojis :0
 
-function crearEnlaceFicha(url, texto, emoji) {
-    if (!url) return "";
+        const emojisSector = {
+            "metalurgia y siderurgia": "🔩",
+            "automotriz y autopartes": "🚗",
+            "quimica": "🧪",
+            "energia": "⚡",
+            "energia nuclear": "☢️",
+            "agroindustria": "🌾",
+            "logistica y transporte": "🚛",
+            "construccion e ingenieria": "🏗️",
+            "alimentos y bebidas": "🍞",
+            "forestoindustria": "🌳",
+            "tecnologia y electronica": "💻",
+            "manufactura": "🏭",
+            "manufactura y otros sectores": "🏭",
+            "servicios": "🏢",
+            "educacion": "🎓",
+            "mineria": "⛏️"
+        };
 
-    let direccion = String(url).trim();
+        function emojiDelSector(sector) {
+            return emojisSector[normalizarBusqueda(sector)] || "🏭";
+        }
 
-    if (/^(www\.|maps\.app\.goo\.gl\/)/i.test(direccion)) {
-        direccion = "https://" + direccion;
-    }
+        const coloresSector = {
+            "metalurgia y siderurgia": "#d97706",
+            "automotriz y autopartes": "#2563eb",
+            "quimica": "#9333ea",
+            "energia": "#eab308",
+            "energia nuclear": "#16a34a",
+            "agroindustria": "#65a30d",
+            "logistica y transporte": "#0284c7",
+            "construccion e ingenieria": "#a16207",
+            "alimentos y bebidas": "#ea580c",
+            "forestoindustria": "#15803d",
+            "tecnologia y electronica": "#6366f1",
+            "manufactura": "#64748b",
+            "manufactura y otros sectores": "#64748b",
+            "servicios": "#0d9488",
+            "educacion": "#db2777",
+            "mineria": "#78716c"
+        };
+        function colorDelSector(sector) { return coloresSector[normalizarBusqueda(sector)] || "#009b86"; }
 
-    if (!/^https?:\/\//i.test(direccion)) return "";
+        function crearIconoSector(sector) {
+            const emoji = emojiDelSector(sector);
 
-    return `
-        <a href="${escaparHTML(direccion)}"
-           target="_blank"
-           rel="noopener noreferrer">
-            ${emoji} ${escaparHTML(texto)}
-        </a>
-    `;
-}
-// acá agregué emojis :0
+            return L.divIcon({
+                className: "emoji-marcador",
+                html: `<span style="--color-sector:${colorDelSector(sector)}">${emoji}</span>`,
+                iconSize: [36, 36],
+                iconAnchor: [18, 18],
+                popupAnchor: [0, -20]
+            });
+        }
 
-const emojisSector = {
-    "metalurgia y siderurgia": "🔩",
-    "automotriz y autopartes": "🚗",
-    "quimica": "🧪",
-    "energia": "⚡",
-    "energia nuclear": "☢️",
-    "agroindustria": "🌾",
-    "logistica y transporte": "🚛",
-    "construccion e ingenieria": "🏗️",
-    "alimentos y bebidas": "🍞",
-    "forestoindustria": "🌳",
-    "tecnologia y electronica": "💻",
-    "manufactura": "🏭",
-    "servicios": "🏢",
-    "educacion": "🎓",
-    "mineria": "⛏️"
-};
+        // La leyenda se construye con los sectores reales del JSON,
+        // evitando que quede desactualizada al agregar nuevas categorías.
+        function actualizarLeyendaSectores() {
+            const contenedor = document.getElementById("leyendaSectores");
+            const sectores = [...new Set(fichasMapa.map(ficha => ficha.sector))]
+                .sort((a, b) => a.localeCompare(b, "es"));
+            contenedor.replaceChildren();
+            sectores.forEach(sector => {
+                const item = document.createElement("div");
+                const simbolo = document.createElement("span");
+                simbolo.textContent = emojiDelSector(sector) + " ";
+                simbolo.style.color = colorDelSector(sector);
+                const nombre = document.createElement("span");
+                nombre.textContent = sector;
+                item.append(simbolo, nombre);
+                contenedor.appendChild(item);
+            });
+        }
 
-function emojiDelSector(sector) {
-    return emojisSector[normalizarBusqueda(sector)] || "🏭";
-}
-
-const coloresSector = {
-    "metalurgia y siderurgia": "#d97706",
-    "automotriz y autopartes": "#2563eb",
-    "quimica": "#9333ea",
-    "energia": "#eab308",
-    "energia nuclear": "#16a34a",
-    "agroindustria": "#65a30d",
-    "logistica y transporte": "#0284c7",
-    "construccion e ingenieria": "#a16207",
-    "alimentos y bebidas": "#ea580c",
-    "forestoindustria": "#15803d",
-    "tecnologia y electronica": "#6366f1",
-    "manufactura": "#64748b",
-    "servicios": "#0d9488",
-    "educacion": "#db2777",
-    "mineria": "#78716c"
-};
-function colorDelSector(sector) { return coloresSector[normalizarBusqueda(sector)] || "#009b86"; }
-
-function crearIconoSector(sector) {
-    const emoji = emojiDelSector(sector);
-
-    return L.divIcon({
-        className: "emoji-marcador",
-        html: `<span style="--color-sector:${colorDelSector(sector)}">${emoji}</span>`,
-        iconSize: [36, 36],
-        iconAnchor: [18, 18],
-        popupAnchor: [0, -20]
-    });
-}
         function completarSelector(selector, campo) {
             selector.options.length = 1;
 
@@ -730,10 +725,10 @@ function crearIconoSector(sector) {
                 .filter(Boolean);
 
             const visibles = [];
+            const fichasVisibles = [];
 
             mapa.closePopup();
 
-            // Reconstruimos el grupo con las empresas que cumplen los filtros.
             grupoMarcadores.clearLayers();
             fichasMapa.forEach(ficha => {
                 const coincideBusqueda = palabras.every(palabra =>
@@ -760,11 +755,12 @@ function crearIconoSector(sector) {
 
                 if (mostrar) {
                     visibles.push(ficha.marcador);
+                    fichasVisibles.push(ficha);
                 }
             });
 
             grupoMarcadores.addLayers(visibles);
-            actualizarEstadisticas(visibles);
+            actualizarEstadisticas(fichasVisibles);
 
             contadorMapa.textContent = visibles.length
                 ? `${visibles.length} de ${fichasMapa.length} fichas`
@@ -848,8 +844,8 @@ function crearIconoSector(sector) {
                         longitud = longitud / 1e15;
                     }
 
-                    // Validación de coordenadas geográficas válidas
-                    if (
+                    // validación de coordenadas       
+             if (
                         !textoLatitud ||
                         !textoLongitud ||
                         !Number.isFinite(latitud) ||
@@ -904,74 +900,75 @@ function crearIconoSector(sector) {
 
 let ficha = `<div class="ficha-empresa">`;
 
-ficha += `
-    <div class="ficha-titulo">
-        ${emojiDelSector(sector)} ${escaparHTML(nombre)}
-    </div>
-`;
+                ficha += `
+                    <div class="ficha-titulo">
+                        ${emojiDelSector(sector)} ${escaparHTML(nombre)}
+                    </div>
+                `;
 
-const campos = [
-    ["🏢", "Tipo", tipo],
-    ["🏷️", "Sector", sector],
-    ["🛠️", "Actividad", actividad],
-    ["👥", "Empleados", empresa.Empleados],
-    ["📍", "Ciudad", ciudad],
-    ["🏭", "Empresa", empresa["Empresa / grupo"]]
-];
+                const campos = [
+                    ["🏢", "Tipo", tipo],
+                    ["🏷️", "Sector", sector],
+                    ["🛠️", "Actividad", actividad],
+                    ["👥", "Empleados", empresa.Empleados],
+                    ["📍", "Ciudad", ciudad],
+                    ["🏭", "Empresa", empresa["Empresa / grupo"]]
+                ];
 
-campos.forEach(([emoji, etiqueta, valor]) => {
-    if (
-        valor !== null &&
-        valor !== undefined &&
-        String(valor).trim() !== ""
-    ) {
-        ficha += `
-            <div class="ficha-campo">
-                ${emoji} <b>${etiqueta}:</b> ${escaparHTML(valor)}
-            </div>
-        `;
-    }
-});
+                campos.forEach(([emoji, etiqueta, valor]) => {
+                    if (
+                        valor !== null &&
+                        valor !== undefined &&
+                        String(valor).trim() !== ""
+                    ) {
+                        ficha += `
+                            <div class="ficha-campo">
+                                ${emoji} <b>${etiqueta}:</b> ${escaparHTML(valor)}
+                            </div>
+                        `;
+                    }
+                });
 
-// Enlaces de las empresas aq
+                // enlaces de las empresas aq
 
-const urlMaps =
-    empresa["Google Maps"] || empresa["Google maps"];
+                const urlMaps =
+                    empresa["Google Maps"] || empresa["Google maps"];
 
-const urlContacto =
-    empresa["Formulario de contacto"] || empresa.Cuestionario;
+                const urlContacto =
+                    empresa["Formulario de contacto"] || empresa.Cuestionario;
 
-ficha += `<div class="ficha-acciones">`;
+                ficha += `<div class="ficha-acciones">`;
 
-ficha += crearEnlaceFicha(
-    empresa.Web,
-    "Página web",
-    "🌐"
-);
+                ficha += crearEnlaceFicha(
+                    empresa.Web,
+                    "Página web",
+                    "🌐"
+                );
 
-ficha += crearEnlaceFicha(
-    urlMaps,
-    "Cómo llegar",
-    "🧭"
-);
+                ficha += crearEnlaceFicha(
+                    urlMaps,
+                    "Cómo llegar",
+                    "🧭"
+                );
 
-ficha += crearEnlaceFicha(
-    urlContacto,
-    "Solicitar contacto",
-    "📩"
-);
+                ficha += crearEnlaceFicha(
+                    urlContacto,
+                    "Solicitar contacto",
+                    "📩"
+                );
 
-ficha += `</div></div>`;
+                ficha += `</div></div>`;
 
-// MARCADOR CON EMOJI SEGÚN el SECTOR
+                // marcador de emoji según el sector
 
-const marcador = L.marker(
-    [latitud, longitud],
-    {
-        icon: crearIconoSector(sector)
-    }
-)
-.bindPopup(ficha);
+                const marcador = L.marker(
+                    [latitud, longitud],
+                    {
+                        icon: crearIconoSector(sector),
+                        title: nombre
+                    }
+                )
+                .bindPopup(ficha);
                     fichasMapa.push({
                         marcador,
                         nombre,
@@ -990,6 +987,7 @@ const marcador = L.marker(
                     });
                 });
 
+                actualizarLeyendaSectores();
                 completarSelector(selectorSector, "sector");
                 completarSelector(selectorCiudad, "ciudad");
                 completarSelector(selectorTipo, "tipo");
