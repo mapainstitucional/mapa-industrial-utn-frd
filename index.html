@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Mapa Industrial UTN-FRD</title>
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+
+    <style>
+
+        :root {
+            --verde: #009b86;
+            --verde-oscuro: #007b6c;
+            --texto: #243b38;
+            --borde: #dce9e5;
+            --fondo: #f5f8f7;
+        }
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: Arial, sans-serif; background: var(--fondo); color: var(--texto); }
+        .contenedor-pagina { max-width: 1500px; margin: 0 auto; padding: 22px 24px 32px; }
+        .encabezado-mapa { display: flex; align-items: center; gap: 32px; padding: 20px 26px; margin-bottom: 18px; background: white; border: 1px solid var(--borde); border-left: 5px solid var(--verde); border-radius: 12px; }
+        .enlace-logo-utn { display: block; flex: 0 0 auto; }
+        .logo-utn-frd { display: block; width: 275px; max-width: 100%; height: auto; }
+        .encabezado-texto { min-width: 0; }
+        .encabezado-mapa h1 { font-size: 30px; color: var(--verde-oscuro); margin: 0 0 8px; }
+        .subtitulo-mapa { margin: 0; font-size: 15px; line-height: 1.5; color: #60716e; }
+        .filtros-mapa { display: flex; flex-wrap: wrap; gap: 12px; align-items: end; margin-bottom: 16px; padding: 17px 20px; background: white; border: 1px solid var(--borde); border-radius: 12px; }
+        .filtros-mapa > div { flex: 1 1 175px; min-width: 0; }
+        .filtros-mapa label { display: block; margin-bottom: 6px; font-size: 13px; font-weight: bold; color: #345a53; }
+        .filtros-mapa input, .filtros-mapa select, .filtros-mapa button { width: 100%; min-height: 42px; padding: 9px 11px; border: 1px solid #cdded8; border-radius: 8px; font: inherit; background: white; color: var(--texto); }
+        .filtros-mapa input:focus, .filtros-mapa select:focus { outline: 2px solid var(--verde); outline-offset: 1px; }
+        .filtros-mapa button { width: auto; background: var(--verde); border-color: var(--verde); color: white; font-weight: bold; cursor: pointer; }
+        .filtros-mapa button:hover { background: var(--verde-oscuro); }
+        .filtros-mapa button:disabled { opacity: .6; cursor: wait; }
+        #contadorMapa { width: 100%; margin: 0; color: #54746d; font-size: 13px; }
+        #mapa { height: 650px; border: 1px solid var(--borde); border-radius: 12px; overflow: hidden; }
+        .emoji-marcador { background: transparent; border: none; }
+        .emoji-marcador span { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: white; border: 2px solid white; border-radius: 50%; box-shadow: 0 2px 9px rgba(0,0,0,.28); font-size: 21px; }
+        .ficha-empresa { min-width: 210px; color: var(--texto); }
+        .ficha-titulo { font-size: 16px; font-weight: bold; margin-bottom: 11px; color: var(--verde-oscuro); }
+        .ficha-campo { margin: 5px 0; line-height: 1.4; }
+        .ficha-acciones { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 13px; }
+        .ficha-acciones a { display: inline-block; padding: 7px 9px; border-radius: 7px; background: #e6f4ef; color: var(--verde-oscuro); font-weight: bold; text-decoration: none; }
+        .ficha-acciones a:hover { background: #cfe9e0; }
+        @media (max-width: 750px) {
+            .contenedor-pagina { padding: 12px; }
+            .encabezado-mapa { flex-direction: column; align-items: flex-start; gap: 14px; padding: 18px; }
+            .logo-utn-frd { width: 230px; }
+            .encabezado-mapa h1 { font-size: 26px; }
+            .filtros-mapa { padding: 14px; }
+            .filtros-mapa > div { flex: 1 1 100%; }
+            .filtros-mapa button { width: 100%; }
+            #mapa { height: 520px; }
+        }
+/* REFERENCIAS DESPLEGABLES */
+
+.leyenda-desplegable {
+    margin-top: 16px;
+}
+
+.leyenda-desplegable summary {
+    display: inline-block;
+    cursor: pointer;
+    background: #007F70;
+    color: white;
+    border-radius: 9px;
+    padding: 11px 17px;
+    font-size: 14px;
+    font-weight: 600;
+    list-style: none;
+    transition: background 0.2s;
+}
+
+.leyenda-desplegable summary::-webkit-details-marker {
+    display: none;
+}
+
+.leyenda-desplegable summary:hover {
+    background: #00695D;
+}
+
+.leyenda-desplegable[open] summary {
+    background: #00695D;
+}
+
+.leyenda-contenido {
+    background: white;
+    border: 1px solid #D9E8E2;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 12px;
+}
+
+.leyenda-contenido p {
+    color: #687B75;
+    font-size: 14px;
+    margin: 0 0 16px;
+}
+/* BOTÓN ACERCA DEL PROYECTO */
+
+.leyenda-desplegable,
+.acerca-desplegable {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 16px;
+    margin-right: 10px;
+}
+
+.acerca-desplegable summary {
+    display: inline-block;
+    cursor: pointer;
+    background: #007F70;
+    color: white;
+    border-radius: 9px;
+    padding: 11px 17px;
+    font-size: 14px;
+    font-weight: 600;
+    list-style: none;
+}
+
+.acerca-desplegable summary::-webkit-details-marker {
+    display: none;
+}
+
+.acerca-desplegable summary:hover {
+    background: #00695D;
+}
+
+.acerca-contenido {
+    background: white;
+    border: 1px solid #D9E8E2;
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 12px;
+    max-width: 620px;
+    line-height: 1.7;
+    color: #35534B;
+}
+
+.acerca-contenido h2 {
+    color: #007F70;
+    font-size: 20px;
+    margin: 0 0 15px;
+}
+
+.acerca-contenido p {
+    margin: 0 0 14px;
+    font-size: 14px;
+}
+
+.acerca-nota {
+    color: #71857D;
+    font-size: 12px !important;
+    border-top: 1px solid #E1ECE6;
+    padding-top: 14px;
+}
+/* INFORMACIÓN INSTITUCIONAL */
+
+.institucional-desplegable {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 16px;
+    margin-right: 10px;
+}
+
+.institucional-desplegable summary {
+    display: inline-block;
+    cursor: pointer;
+    background: #007F70;
+    color: white;
+    border-radius: 9px;
+    padding: 11px 17px;
+    font-size: 14px;
+    font-weight: 600;
+    list-style: none;
+}
+
+.institucional-desplegable summary::-webkit-details-marker {
+    display: none;
+}
+
+.institucional-desplegable summary:hover {
+    background: #00695D;
+}
+
+.institucional-contenido {
+    background: white;
+    border: 1px solid #D9E8E2;
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 12px;
+    max-width: 650px;
+    line-height: 1.6;
+    color: #35534B;
+}
+
+.institucional-contenido h2 {
+    color: #007F70;
+    font-size: 20px;
+    margin: 0 0 8px;
+}
+
+.institucional-contenido h3 {
+    color: #35534B;
+    font-size: 16px;
+    margin: 22px 0 14px;
+}
+
+.institucional-contenido a {
+    color: #007F70;
+    font-weight: 600;
+}
+
+/* TARJETAS DE AUTORIDADES */
+
+.autoridades-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin: 20px 0 24px;
+}
+
+.autoridad-card {
+    background: #F3F8F5;
+    border: 1px solid #E1ECE6;
+    border-radius: 12px;
+    padding: 18px;
+    text-align: center;
+}
+
+.autoridad-foto {
+    display: block;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    margin: 0 auto 14px;
+    border: 3px solid white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.autoridad-card h4 {
+    color: #007F70;
+    font-size: 15px;
+    margin: 0 0 8px;
+}
+
+.autoridad-card p {
+    color: #526A62;
+    font-size: 12px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.institucional-nota {
+    color: #71857D;
+    font-size: 12px;
+    border-top: 1px solid #E1ECE6;
+    padding-top: 14px;
+}
+
+/* Diseño adaptable a celulares */
+
+@media (max-width: 500px) {
+    .autoridades-grid {
+        grid-template-columns: 1fr;
+    }
+}
+        /* Agrupaciones en los colores institucionales */
+        .marker-cluster-small, .marker-cluster-medium, .marker-cluster-large {
+            background: rgba(0, 155, 134, 0.22);
+        }
+        .marker-cluster-small div, .marker-cluster-medium div, .marker-cluster-large div {
+            background: #009b86;
+            color: #fff;
+            font-weight: 700;
+            font-family: Arial, sans-serif;
+        }
+
+        /Indicadores y gráficos del relevamiento/
+        .panel-estadisticas { background:#fff; border:1px solid var(--borde); border-radius:12px; padding:18px 20px; margin-bottom:16px; }
+        .panel-estadisticas h2 { color:var(--verde-oscuro); font-size:18px; margin:0 0 14px; }
+        .estadisticas-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; }
+        .estadistica { background:#f0f7f4; border:1px solid #dcebe4; border-radius:10px; padding:14px; }
+        .estadistica strong { display:block; font-size:26px; color:#007b6c; }
+        .estadistica span { font-size:12px; color:#526a62; }
+        .estadisticas-detalle { margin-top:16px; }
+        .estadisticas-detalle summary { cursor:pointer; color:#007b6c; font-weight:bold; }
+        .estadisticas-barras { display:grid; gap:10px; margin-top:15px; }
+        .estadisticas-fila { display:grid; grid-template-columns:minmax(140px,1fr) 3fr 40px; gap:10px; align-items:center; font-size:13px; }
+        .estadisticas-pista { height:14px; background:#e7f0ed; border-radius:8px; overflow:hidden; }
+        .estadisticas-barra { height:100%; background:#009b86; border-radius:8px; }
+        .estadisticas-aviso { font-size:12px; color:#637971; margin:12px 0 0; }
+        .emoji-marcador span { border-color:var(--color-sector,#fff); border-width:3px; }
+        @media (max-width:750px) { .estadisticas-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .estadisticas-fila { grid-template-columns:minmax(95px,1fr) 2fr 30px; } }
+    </style>
+</head>
+
+<body>
+    <div class="contenedor-pagina">
+        <header class="encabezado-mapa">
+            <a class="enlace-logo-utn" href="https://www.frd.utn.edu.ar/" target="_blank" rel="noopener noreferrer">
+                <img src="logo-utn-frd.png" alt="UTN Facultad Regional Delta" class="logo-utn-frd">
+            </a>
+            <div class="encabezado-texto">
+                <h1>Mapa Industrial</h1>
+                <p class="subtitulo-mapa">Explorá las empresas y los sectores productivos de Campana, Zárate y la región.</p>
+            </div>
+        </header>
+
+    <div class="filtros-mapa">
+        <div>
+            <label for="buscarEmpresa">Buscar empresa</label>
+            <input
+                id="buscarEmpresa"
+                type="search"
+                placeholder="Nombre o actividad"
+                disabled
+            >
+        </div>
+
+        <div>
+            <label for="filtrarSector">Sector</label>
+            <select id="filtrarSector" disabled>
+                <option value="">Todos los sectores</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="filtrarCiudad">Ciudad</label>
+            <select id="filtrarCiudad" disabled>
+                <option value="">Todas las ciudades</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="filtrarTipo">Tipo</label>
+            <select id="filtrarTipo" disabled>
+                <option value="">Todos los tipos</option>
+            </select>
+        </div>
+
+        <button id="limpiarFiltrosMapa" type="button" disabled>
+            Limpiar filtros
+        </button>
+
+        <p id="contadorMapa" role="status" aria-live="polite">
+            Cargando empresas...
+        </p>
+    </div>
+
+    <section class="panel-estadisticas" aria-label="Estadísticas del mapa industrial">
+        <h2>📊 El entramado productivo en números</h2>
+        <div class="estadisticas-grid">
+            <div class="estadistica"><strong id="totalEmpresas">—</strong><span>Empresas registradas</span></div>
+            <div class="estadistica"><strong id="totalSectores">—</strong><span>Sectores productivos</span></div>
+            <div class="estadistica"><strong id="totalLocalidades">—</strong><span>Localidades</span></div>
+            <div class="estadistica"><strong id="totalVisibles">—</strong><span>Empresas visibles</span></div>
+        </div>
+        <details class="estadisticas-detalle">
+            <summary>Ver distribución de empresas por sector</summary>
+            <div id="estadisticasBarras" class="estadisticas-barras"></div>
+        </details>
+        <p class="estadisticas-aviso">Los datos representan las fichas con coordenadas válidas de este relevamiento, no un censo de todas las empresas de la región.</p>
+    </section>
+    <div id="mapa"></div>
+<details class="leyenda-desplegable">
+    <summary>🏷️ Ver referencias del mapa</summary>
+
+    <div class="leyenda-contenido">
+        <p>Cada símbolo representa un sector productivo.</p>
+
+        <div class="leyenda-grid">
+            <div>🔩 Metalurgia y siderurgia</div>
+            <div>🚗 Automotriz y autopartes</div>
+            <div>🧪 Química</div>
+            <div>⚡ Energía</div>
+            <div>☢️ Energía nuclear</div>
+            <div>🌾 Agroindustria</div>
+            <div>🚛 Logística y transporte</div>
+            <div>🏗️ Construcción e ingeniería</div>
+            <div>🍞 Alimentos y bebidas</div>
+            <div>🌳 Forestoindustria</div>
+            <div>💻 Tecnología y electrónica</div>
+            <div>🏭 Manufactura y otros sectores</div>
+            <div>🏢 Servicios</div>
+            <div>🎓 Educación</div>
+            <div>⛏️ Minería</div>
+        </div>
+    </div>
+</details>
+<details class="acerca-desplegable">
+    <summary>ℹ️ Acerca del proyecto</summary>
+
+    <div class="acerca-contenido">
+
+        <h2>Mapa Industrial UTN-FRD</h2>
+
+        <p>
+            El Mapa Industrial es una iniciativa desarrollada
+            en el ámbito de Extensión Universitaria de la
+            Universidad Tecnológica Nacional,
+            Facultad Regional Delta.
+        </p>
+
+        <p>
+            Su objetivo es reunir y organizar información
+            sobre las empresas, industrias y actividades
+            productivas de Campana, Zárate y la región,
+            facilitando su consulta mediante una
+            plataforma geográfica interactiva.
+        </p>
+
+        <p>
+            Esta herramienta busca contribuir al conocimiento
+            del entramado productivo regional y favorecer
+            la vinculación entre la universidad,
+            las empresas y la comunidad.
+        </p>
+
+        <p class="acerca-nota">
+            La información publicada tiene carácter
+            orientativo y puede estar sujeta a actualizaciones.
+        </p>
+
+    </div>
+</details>
+
+<details class="institucional-desplegable">
+
+    <summary>🎓 Información institucional</summary>
+
+    <div class="institucional-contenido">
+
+        <h2>Universidad Tecnológica Nacional</h2>
+        <p>Facultad Regional Delta</p>
+
+        <h3>Autoridades de referencia</h3>
+
+        <div class="autoridades-grid">
+
+
+            <div class="autoridad-card">
+
+                <img
+                    src="jorge-cavalchini.png"
+                    alt="Fotografía institucional de Jorge Cavalchini"
+                    class="autoridad-foto"
+                    loading="lazy"
+                >
+
+                <h4>Ing. Jorge Cavalchini</h4>
+
+                <p>
+                    Subsecretario de Transferencia Tecnológica
+                </p>
+
+            </div>
+
+
+            <div class="autoridad-card">
+
+                <img
+                    src="maria-laura-cesario.png"
+                    alt="Fotografía institucional de María Laura Cesario"
+                    class="autoridad-foto"
+                    loading="lazy"
+                >
+
+                <h4>Lic. María Laura Cesario</h4>
+
+                <p>
+                    Subsecretaria de Vinculación Tecnológica
+                </p>
+
+            </div>
+
+        </div>
+
+        <p>
+            🌐 <a href="https://www.frd.utn.edu.ar/"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                Sitio oficial de UTN Facultad Regional Delta
+            </a>
+        </p>
+
+        <p class="institucional-nota">
+            Este mapa es una herramienta informativa.
+            La inclusión de empresas no implica necesariamente
+            la existencia de convenios institucionales vigentes.
+        </p>
+
+    </div>
+
+</details>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+    <script>
+        const mapa = L.map("mapa").setView(
+            [-34.15303424798348, -59.020487178884],
+            13
+        );
+
+        L.tileLayer(
+            "https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png",
+            {
+                attribution: "&copy; OpenStreetMap contributors"
+            }
+        ).addTo(mapa);
+
+        // Agrupa marcadores cercanos sin cambiar sus emojis individuales.
+        const grupoMarcadores = L.markerClusterGroup({
+            showCoverageOnHover: false,
+            spiderfyOnMaxZoom: true,
+            zoomToBoundsOnClick: true,
+            maxClusterRadius: 45,
+            disableClusteringAtZoom: 16
+        });
+        mapa.addLayer(grupoMarcadores);
+
+        const fichasMapa = [];
+        const totalEmpresasEl = document.getElementById("totalEmpresas");
+        const totalSectoresEl = document.getElementById("totalSectores");
+        const totalLocalidadesEl = document.getElementById("totalLocalidades");
+        const totalVisiblesEl = document.getElementById("totalVisibles");
+        const estadisticasBarrasEl = document.getElementById("estadisticasBarras");
+
+        function actualizarEstadisticas(visibles) {
+            totalEmpresasEl.textContent = fichasMapa.length;
+            totalSectoresEl.textContent = new Set(fichasMapa.map(f => f.sector)).size;
+            totalLocalidadesEl.textContent = new Set(fichasMapa.map(f => f.ciudad)).size;
+            totalVisiblesEl.textContent = visibles.length;
+            const conteos = new Map();
+            visibles.forEach(marcador => {
+                const ficha = fichasMapa.find(f => f.marcador === marcador);
+                if (ficha) conteos.set(ficha.sector, (conteos.get(ficha.sector) || 0) + 1);
+            });
+            const ordenados = [...conteos.entries()].sort((a,b) => b[1] - a[1] || a[0].localeCompare(b[0],"es"));
+            const maximo = ordenados.length ? ordenados[0][1] : 1;
+            estadisticasBarrasEl.replaceChildren();
+            if (!ordenados.length) { estadisticasBarrasEl.textContent = "No hay empresas para estos filtros."; return; }
+            ordenados.forEach(([sector, cantidad]) => {
+                const fila = document.createElement("div"); fila.className = "estadisticas-fila";
+                const nombre = document.createElement("span"); nombre.textContent = sector;
+                const pista = document.createElement("div"); pista.className = "estadisticas-pista";
+                const barra = document.createElement("div"); barra.className = "estadisticas-barra";
+                barra.style.width = (cantidad / maximo * 100) + "%";
+                pista.appendChild(barra);
+                const numero = document.createElement("strong"); numero.textContent = cantidad;
+                fila.append(nombre,pista,numero); estadisticasBarrasEl.appendChild(fila);
+            });
+        }
+
+        const buscadorMapa = document.getElementById("buscarEmpresa");
+        const selectorSector = document.getElementById("filtrarSector");
+        const selectorCiudad = document.getElementById("filtrarCiudad");
+        const selectorTipo = document.getElementById("filtrarTipo");
+        const botonLimpiar = document.getElementById("limpiarFiltrosMapa");
+        const contadorMapa = document.getElementById("contadorMapa");
+
+        const centroInicialMapa = mapa.getCenter();
+        const zoomInicialMapa = mapa.getZoom();
+
+        function normalizarBusqueda(texto) {
+            return String(texto ?? "")
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+        }
+
+        function unificarSectorFiltro(sector) {
+            const equivalencias = {
+                "construccion": "Construcción e ingeniería",
+                "energetico": "Energía",
+                "industrial automotriz y de motovehiculos":
+                    "Automotriz y autopartes"
+            };
+
+            return equivalencias[normalizarBusqueda(sector)] || sector;
+        }
+
+        function unificarCiudadFiltro(ciudad) {
+            const equivalencias = {
+                "zarate": "Zárate",
+                "campana (base)": "Campana",
+                "bs as": "Buenos Aires (sin localidad precisada)",
+                "buenos aires": "Buenos Aires (sin localidad precisada)"
+            };
+
+            return equivalencias[normalizarBusqueda(ciudad)] || ciudad;
+        }
+
+        function escaparHTML(valor) {
+            return String(valor ?? "").replace(/[&<>"']/g, caracter => ({
+                "&": "&amp;",
+                "<": "&lt;",
+                ">": "&gt;",
+                '"': "&quot;",
+                "'": "&#39;"
+            }[caracter]));
+        }
+
+        function crearEnlace(url, texto) {
+            if (!url) return "";
+
+            let direccion = String(url).trim();
+
+            if (/^(www\.|maps\.app\.goo\.gl\/)/i.test(direccion)) {
+                direccion = "https://" + direccion;
+            }
+
+            if (!/^https?:\/\//i.test(direccion)) return "";
+
+            return `
+                <a href="${escaparHTML(direccion)}"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    ${escaparHTML(texto)}
+                </a><br>
+            `;
+        }
+// enlaces
+
+function crearEnlaceFicha(url, texto, emoji) {
+    if (!url) return "";
+
+    let direccion = String(url).trim();
+
+    if (/^(www\.|maps\.app\.goo\.gl\/)/i.test(direccion)) {
+        direccion = "https://" + direccion;
+    }
+
+    if (!/^https?:\/\//i.test(direccion)) return "";
+
+    return `
+        <a href="${escaparHTML(direccion)}"
+           target="_blank"
+           rel="noopener noreferrer">
+            ${emoji} ${escaparHTML(texto)}
+        </a>
+    `;
+}
+// acá agregué emojis :0
+
+const emojisSector = {
+    "metalurgia y siderurgia": "🔩",
+    "automotriz y autopartes": "🚗",
+    "quimica": "🧪",
+    "energia": "⚡",
+    "energia nuclear": "☢️",
+    "agroindustria": "🌾",
+    "logistica y transporte": "🚛",
+    "construccion e ingenieria": "🏗️",
+    "alimentos y bebidas": "🍞",
+    "forestoindustria": "🌳",
+    "tecnologia y electronica": "💻",
+    "manufactura": "🏭",
+    "servicios": "🏢",
+    "educacion": "🎓",
+    "mineria": "⛏️"
+};
+
+function emojiDelSector(sector) {
+    return emojisSector[normalizarBusqueda(sector)] || "🏭";
+}
+
+const coloresSector = {
+    "metalurgia y siderurgia": "#d97706",
+    "automotriz y autopartes": "#2563eb",
+    "quimica": "#9333ea",
+    "energia": "#eab308",
+    "energia nuclear": "#16a34a",
+    "agroindustria": "#65a30d",
+    "logistica y transporte": "#0284c7",
+    "construccion e ingenieria": "#a16207",
+    "alimentos y bebidas": "#ea580c",
+    "forestoindustria": "#15803d",
+    "tecnologia y electronica": "#6366f1",
+    "manufactura": "#64748b",
+    "servicios": "#0d9488",
+    "educacion": "#db2777",
+    "mineria": "#78716c"
+};
+function colorDelSector(sector) { return coloresSector[normalizarBusqueda(sector)] || "#009b86"; }
+
+function crearIconoSector(sector) {
+    const emoji = emojiDelSector(sector);
+
+    return L.divIcon({
+        className: "emoji-marcador",
+        html: `<span style="--color-sector:${colorDelSector(sector)}">${emoji}</span>`,
+        iconSize: [36, 36],
+        iconAnchor: [18, 18],
+        popupAnchor: [0, -20]
+    });
+}
+        function completarSelector(selector, campo) {
+            selector.options.length = 1;
+
+            const valores = [...new Set(
+                fichasMapa.map(ficha => ficha[campo])
+            )].sort((a, b) => a.localeCompare(b, "es"));
+
+            valores.forEach(valor => {
+                const opcion = document.createElement("option");
+                opcion.value = valor;
+                opcion.textContent = valor;
+                selector.appendChild(opcion);
+            });
+        }
+
+        function aplicarFiltrosMapa(centrar = true) {
+            const palabras = normalizarBusqueda(buscadorMapa.value)
+                .split(" ")
+                .filter(Boolean);
+
+            const visibles = [];
+
+            mapa.closePopup();
+
+            // Reconstruimos el grupo con las empresas que cumplen los filtros.
+            grupoMarcadores.clearLayers();
+            fichasMapa.forEach(ficha => {
+                const coincideBusqueda = palabras.every(palabra =>
+                    ficha.textoBusqueda.includes(palabra)
+                );
+
+                const coincideSector =
+                    !selectorSector.value ||
+                    ficha.sector === selectorSector.value;
+
+                const coincideCiudad =
+                    !selectorCiudad.value ||
+                    ficha.ciudad === selectorCiudad.value;
+
+                const coincideTipo =
+                    !selectorTipo.value ||
+                    ficha.tipo === selectorTipo.value;
+
+                const mostrar =
+                    coincideBusqueda &&
+                    coincideSector &&
+                    coincideCiudad &&
+                    coincideTipo;
+
+                if (mostrar) {
+                    visibles.push(ficha.marcador);
+                }
+            });
+
+            grupoMarcadores.addLayers(visibles);
+            actualizarEstadisticas(visibles);
+
+            contadorMapa.textContent = visibles.length
+                ? `${visibles.length} de ${fichasMapa.length} fichas`
+                : "No hay coincidencias. Probá otros filtros.";
+
+            if (!centrar || visibles.length === 0) return;
+
+            if (visibles.length === 1) {
+                mapa.setView(visibles[0].getLatLng(), 15);
+            } else {
+                mapa.fitBounds(
+                    L.latLngBounds(
+                        visibles.map(marcador => marcador.getLatLng())
+                    ),
+                    {
+                        padding: [30, 30],
+                        maxZoom: 14
+                    }
+                );
+            }
+        }
+
+        buscadorMapa.addEventListener("input", () => aplicarFiltrosMapa());
+        selectorSector.addEventListener("change", () => aplicarFiltrosMapa());
+        selectorCiudad.addEventListener("change", () => aplicarFiltrosMapa());
+        selectorTipo.addEventListener("change", () => aplicarFiltrosMapa());
+
+        botonLimpiar.addEventListener("click", () => {
+            buscadorMapa.value = "";
+            selectorSector.value = "";
+            selectorCiudad.value = "";
+            selectorTipo.value = "";
+
+            aplicarFiltrosMapa(false);
+            mapa.setView(centroInicialMapa, zoomInicialMapa);
+        });
+
+        async function cargarEmpresas() {
+            try {
+                const respuesta = await fetch(
+                    "./empresas.json",
+                    { cache: "no-store" }
+                );
+
+                if (!respuesta.ok) {
+                    throw new Error(
+                        "No se pudo abrir empresas.json (HTTP " +
+                        respuesta.status + ")."
+                    );
+                }
+
+                const empresas = await respuesta.json();
+
+                if (!Array.isArray(empresas)) {
+                    throw new Error("El JSON debe contener una lista de empresas.");
+                }
+
+                if (empresas.length === 0) {
+                    throw new Error("El JSON no contiene empresas.");
+                }
+
+                const registros = [];
+
+                empresas.forEach((empresa, indice) => {
+                    if (!empresa || typeof empresa !== "object") return;
+
+                    const nombre = String(empresa.Nombre ?? "").trim();
+                    if (!nombre) return;
+
+                    const textoLatitud = String(empresa.Latitud ?? "").trim();
+                    const textoLongitud = String(empresa.Longitud ?? "").trim();
+
+                    let latitud = Number(textoLatitud.replace(",", "."));
+                    let longitud = Number(textoLongitud.replace(",", "."));
+
+                    // Corrección automática si Excel/Sheets exportó en notación e+15 / e+16
+                    if (Math.abs(latitud) > 1e10) {
+                        latitud = latitud / 1e15;
+                    }
+                    if (Math.abs(longitud) > 1e10) {
+                        longitud = longitud / 1e15;
+                    }
+
+                    // Validación de coordenadas geográficas válidas
+                    if (
+                        !textoLatitud ||
+                        !textoLongitud ||
+                        !Number.isFinite(latitud) ||
+                        !Number.isFinite(longitud) ||
+                        Math.abs(latitud) > 90 ||
+                        Math.abs(longitud) > 180
+                    ) {
+                        console.warn(`Empresa omitida por coordenadas inválidas: "${nombre}" (Fila ${indice + 1})`, empresa);
+                        return;
+                    }
+
+                    const sector = unificarSectorFiltro(
+                        String(empresa.Sector ?? "").trim() || "Sin sector informado"
+                    );
+
+                    const ciudad = unificarCiudadFiltro(
+                        String(empresa.Ciudad ?? "").trim() || "Sin ciudad informada"
+                    );
+
+                    const tipo = String(empresa.Tipo ?? "").trim() || "Sin clasificar";
+                    const actividad = String(empresa.Actividad ?? "").trim();
+
+                    registros.push({
+                        empresa,
+                        nombre,
+                        latitud,
+                        longitud,
+                        sector,
+                        ciudad,
+                        tipo,
+                        actividad
+                    });
+                });
+
+                if (registros.length === 0) {
+                    throw new Error("No se encontraron empresas con coordenadas válidas para mostrar.");
+                }
+
+                registros.forEach(registro => {
+                    const {
+                        empresa,
+                        nombre,
+                        latitud,
+                        longitud,
+                        sector,
+                        ciudad,
+                        tipo,
+                        actividad
+                    } = registro;
+
+                  
+
+let ficha = `<div class="ficha-empresa">`;
+
+ficha += `
+    <div class="ficha-titulo">
+        ${emojiDelSector(sector)} ${escaparHTML(nombre)}
+    </div>
+`;
+
+const campos = [
+    ["🏢", "Tipo", tipo],
+    ["🏷️", "Sector", sector],
+    ["🛠️", "Actividad", actividad],
+    ["👥", "Empleados", empresa.Empleados],
+    ["📍", "Ciudad", ciudad],
+    ["🏭", "Empresa", empresa["Empresa / grupo"]]
+];
+
+campos.forEach(([emoji, etiqueta, valor]) => {
+    if (
+        valor !== null &&
+        valor !== undefined &&
+        String(valor).trim() !== ""
+    ) {
+        ficha += `
+            <div class="ficha-campo">
+                ${emoji} <b>${etiqueta}:</b> ${escaparHTML(valor)}
+            </div>
+        `;
+    }
+});
+
+// Enlaces de las empresas aq
+
+const urlMaps =
+    empresa["Google Maps"] || empresa["Google maps"];
+
+const urlContacto =
+    empresa["Formulario de contacto"] || empresa.Cuestionario;
+
+ficha += `<div class="ficha-acciones">`;
+
+ficha += crearEnlaceFicha(
+    empresa.Web,
+    "Página web",
+    "🌐"
+);
+
+ficha += crearEnlaceFicha(
+    urlMaps,
+    "Cómo llegar",
+    "🧭"
+);
+
+ficha += crearEnlaceFicha(
+    urlContacto,
+    "Solicitar contacto",
+    "📩"
+);
+
+ficha += `</div></div>`;
+
+// MARCADOR CON EMOJI SEGÚN el SECTOR
+
+const marcador = L.marker(
+    [latitud, longitud],
+    {
+        icon: crearIconoSector(sector)
+    }
+)
+.bindPopup(ficha);
+                    fichasMapa.push({
+                        marcador,
+                        nombre,
+                        sector,
+                        ciudad,
+                        tipo,
+                        textoBusqueda: normalizarBusqueda(
+                            [
+                                nombre,
+                                sector,
+                                ciudad,
+                                tipo,
+                                actividad
+                            ].join(" ")
+                        )
+                    });
+                });
+
+                completarSelector(selectorSector, "sector");
+                completarSelector(selectorCiudad, "ciudad");
+                completarSelector(selectorTipo, "tipo");
+
+                [
+                    buscadorMapa,
+                    selectorSector,
+                    selectorCiudad,
+                    selectorTipo,
+                    botonLimpiar
+                ].forEach(control => {
+                    control.disabled = false;
+                });
+
+                aplicarFiltrosMapa(false);
+            } catch (error) {
+                contadorMapa.textContent =
+                    "No se pudieron cargar las empresas: " + error.message;
+                console.error(error);
+            }
+        }
+
+        cargarEmpresas();
+    </script>
+</body>
+</html>
