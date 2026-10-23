@@ -1764,13 +1764,203 @@
     "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
   },
   {
+    "Nombre": "Parque industrial Pilar",
+    "Sector": "Servicios",
+    "Ciudad": "Pilar",
+    "Tipo": "Sin clasificar",
+    "Latitud": -34.4126998895244,
+    "Longitud": -58.9706245703933,
+    "Google maps": "https://www.google.com/maps?q=-34.4126998895244,-58.9706245703933",
+    "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
+  },
+  {
+    "Nombre": "3 Arroyos",
+    "Sector": "Alimentos y bebidas",
+    "Ciudad": "Pilar",
+    "Tipo": "Sin clasificar",
+    "Latitud": -34.4067433759763,
+    "Longitud": -58.9806388249878,
+    "Google maps": "https://www.google.com/maps/place/3+Arroyos+SA/@-34.4126728,-58.9844538,14.33z/data=!4m6!3m5!1s0x95bb7dbd8c2069b7:0x92123fa699ca5733!8m2!3d-34.407914!4d-58.9816988!16s%2Fg%2F11cjp9y496?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
+  },
+  {
+    "Nombre": "ABRASIVOS ARGENTINOS",
+    "Sector": "Caucho y adhesivos",
+    "Ciudad": "Pilar",
+    "Tipo": "Sin clasificar",
+    "Latitud": -34.420662567422276,
+    "Longitud": -58.95708856931279,
+    "Google maps": "https://www.google.com/maps/place/Doble+A+-+AA+Abrasivos+Argentinos+SAIC/@-34.4208794,-58.9571744,17z/data=!3m1!4b1!4m6!3m5!1s0x95bb7d7d4641f151:0xaf8d2065ad25ca99!8m2!3d-34.4208794!4d-58.9571744!16s%2Fg%2F11fzbj8t8y?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
+  },
+  {
+    "Nombre": "ADVANCED ORGANIC MATERIALS",
+    "Sector": "Química",
+    "Ciudad": "Pilar",
+    "Tipo": "Sin clasificar",
+    "Latitud": -34.40156312254403,
+    "Longitud": -58.973251696297375,
+    "Google maps": "https://www.google.com/maps/place/Advanced+Organic+Materials+S.A./@-34.4017623,-58.9734019,17z/data=!3m1!4b1!4m6!3m5!1s0x95bb7da39e56a463:0x3435a1f8b93e29e2!8m2!3d-34.4017623!4d-58.9734019!16s%2Fg%2F1pv1yjcpj?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
+  },
+  {
+    "Nombre": "AFB INTERNACIONAL",
+    "Sector": "Alimentos y bebidas",
+    "Ciudad": "Pilar",
+    "Tipo": "Sin clasificar",
+    "Latitud": -34.38698533431245,
+    "Longitud": -58.98604805618169,
+    "Google maps": "https://www.google.com/maps/place/AFB+Internacional/@-34.4100619,-59.0464738,11.75z/data=!4m6!3m5!1s0x95bb7db43d47ea6b:0xeb5f6713fe2e5f72!8m2!3d-34.3933091!4d-58.9852512!16s%2Fg%2F11f5h7fn_t?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
+  },
+  {
+    "Nombre": "AGM ARGENTINA",
+    "Sector": "Química",
+    "Ciudad": "Pilar",
+    "Tipo": "Sin clasificar",
+    "Latitud": -34.408463438971125,
+    "Longitud": -58.96569665767179,
+    "Google maps": "https://www.google.com/maps/place/AGM+Argentina/@-34.4086626,-58.9656752,17z/data=!3m1!4b1!4m6!3m5!1s0x95bb7d141bf9cd05:0x71d03fc67c789571!8m2!3d-34.4086626!4d-58.9656752!16s%2Fg%2F11g1pr329h?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
+  },
+  {
+    "Nombre": "AGM PRUDEN",
+    "Sector": "Manufactura y otros sectores",
+    "Ciudad": "Pilar",
+    "Tipo": "Sin clasificar",
+    "Latitud": -34.501583369577034,
+    "Longitud": -58.526162418261194,
+    "Google maps": "https://www.google.com/maps/place/A.G.Pruden+%26+Cia.S.A./@-34.5017381,-58.5271602,17z/data=!3m1!4b1!4m6!3m5!1s0x95bcb0f5cb9cd779:0xce77223fd5be58a2!8m2!3d-34.5017381!4d-58.5271602!16s%2Fg%2F1tfsjlj3?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
+  },
+  {
+    "Nombre": "ALCOHOLES DEL PLATA",
+    "Sector": "Química",
+    "Ciudad": "Pilar",
+    "Tipo": "Sin clasificar",
+    "Latitud": -34.40976804789552,
+    "Longitud": -58.979017714025446,
+    "Google maps": "https://www.google.com/maps/place/Alcoholes+del+Plata+SRL/@-34.4099318,-58.9796078,17z/data=!3m1!4b1!4m6!3m5!1s0x95bcb66fa3680761:0x8dc8c0971b099d5e!8m2!3d-34.4099318!4d-58.9796078!16s%2Fg%2F1v420n1l?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
+  },
+  {
+    "Nombre": "ALPLA AVELLANEDA",
+    "Sector": "Plásticos y envases",
+    "Ciudad": "Pilar",
+    "Tipo": "Sin clasificar",
+    "Latitud": -34.39519642537285,
+    "Longitud": -58.98221719074346,
+    "Google maps": "https://www.google.com/maps/place/Alpla+Argentina+SA/@-34.3953425,-58.9825927,17z/data=!3m1!4b1!4m6!3m5!1s0x95bb7db1bfbc46e7:0x4ae145edfadc3328!8m2!3d-34.3953425!4d-58.9825927!16s%2Fg%2F11bbrl0p_b?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
+  },
+  {
+    "Nombre": "ALTITUDE LOGISTICS",
+    "Sector": "Logística y transporte",
+    "Ciudad": "Pilar",
+    "Tipo": "Sin clasificar",
+    "Latitud": -34.4144658570927,
+    "Longitud": -58.98158619868183,
+    "Google maps": "https://www.google.com/maps/place/Altitude+Logistics/@-34.4146296,-58.9822192,17z/data=!3m1!4b1!4m6!3m5!1s0x95bb7d12dc80e30d:0xb2de905e7bb91efd!8m2!3d-34.4146296!4d-58.9822192!16s%2Fg%2F11qnh6n9xh?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
+  },
+  {
+    "Nombre": "AMCOR PET PACKAGING DE ARG.",
+    "Sector": "Plásticos y envases",
+    "Ciudad": "Pilar",
+    "Tipo": "Sin clasificar",
+    "Latitud": -34.419042667005726,
+    "Longitud": -58.97419829629739,
+    "Google maps": "https://www.google.com/maps/place/Amcor+Rigid+Packaging+-+Pilar/@-34.4191887,-58.9743485,17z/data=!3m1!4b1!4m6!3m5!1s0x95bc9cda90f1b6a9:0x75d964f570ac0881!8m2!3d-34.4191887!4d-58.9743485!16s%2Fg%2F11bbrpk5hb?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
+  },
+  {
+    "Nombre": "AQUAGLASS",
+    "Sector": "Construcción e ingeniería",
+    "Ciudad": "Pilar",
+    "Tipo": "Sin clasificar",
+    "Latitud": -34.41117775589183,
+    "Longitud": -58.72657278465639,
+    "Google maps": "https://www.google.com/maps/place/Acquaglass/@-34.4113061,-58.7266157,17z/data=!3m1!4b1!4m6!3m5!1s0x95bca1dca795522f:0xc6494b74a3d7ac66!8m2!3d-34.4113061!4d-58.7266157!16s%2Fg%2F11cn7g0j4v?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
+  },
+  {
+    "Nombre": "INMIX ARG.",
+    "Sector": "Alimentos y bebidas",
+    "Ciudad": "Exaltación de la cruz",
+    "Tipo": "Sin clasificar",
+    "Latitud": -34.33793307819648,
+    "Longitud": -58.99937390201528,
+    "Google maps": "https://www.google.com/maps/place/INMIX+S.A./@-34.3353816,-59.1545558,11z/data=!4m6!3m5!1s0x95bb7b00681c02ef:0x319c47fb42b0ec32!8m2!3d-34.3457597!4d-59.0011227!16s%2Fg%2F11w8270vgy?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
+  },
+  {
+    "Nombre": "Trabi",
+    "Sector": "Manufactura",
+    "Ciudad": "Exaltación de la cruz",
+    "Tipo": "Sin clasificar",
+    "Latitud": -34.33965455284129,
+    "Longitud": -58.98865303809465,
+    "Google maps": "https://www.google.com/maps/place/Carti+SA+-+Trabi+Fab+Y+Venta/@-34.3398047,-59.0737677,11.92z/data=!4m6!3m5!1s0x95bccaeec48ca33d:0xedc14a9acbcced8c!8m2!3d-34.3449055!4d-58.996801!16s%2Fg%2F11l_dpy9f6?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
+  },
+  {
+    "Nombre": "Gromanti",
+    "Sector": "Construcción e ingeniería",
+    "Ciudad": "Exaltación de la cruz",
+    "Tipo": "Sin clasificar",
+    "Latitud": -34.38875052792888,
+    "Longitud": -59.01741588255082,
+    "Google maps": "https://www.google.com/maps/place/Gromanti/@-34.3857717,-59.1821644,10.67z/data=!4m6!3m5!1s0x95bcb7458d888fa5:0xad977ab54df25b41!8m2!3d-34.3899188!4d-59.0194195!16s%2Fg%2F11b6nsgq6n?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
+  },
+  {
+    "Nombre": "VASA",
+    "Sector": "Vidrio y cerámica",
+    "Ciudad": "Exaltación de la cruz",
+    "Tipo": "Sin clasificar",
+    "Latitud": -34.36112735273344,
+    "Longitud": -59.003526548415266,
+    "Google maps": "https://www.google.com/maps/place/VASA+Cardales/@-34.3612912,-59.0038806,17z/data=!3m1!4b1!4m6!3m5!1s0x95bb7c04570fbe19:0x4793181088816214!8m2!3d-34.3612912!4d-59.0038806!16s%2Fg%2F11cs1wj3vm?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
+  },
+  {
+    "Nombre": "GRUPO SIEI",
+    "Sector": "Construcción e ingeniería",
+    "Ciudad": "Exaltación de la cruz",
+    "Tipo": "Sin clasificar",
+    "Latitud": -34.39393779814121,
+    "Longitud": -58.960172411640976,
+    "Google maps": "https://www.google.com/maps/place/Grupo+Siei/@-34.3941547,-58.9602797,17z/data=!3m1!4b1!4m6!3m5!1s0x95bc9cc2b973ec6b:0xf420efd35a4a2348!8m2!3d-34.3941547!4d-58.9602797!16s%2Fg%2F11rx_z38xl?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
+  },
+  {
+    "Nombre": "Storage Compact",
+    "Sector": "Manufactura",
+    "Ciudad": "Exaltación de la cruz",
+    "Tipo": "Sin clasificar",
+    "Latitud": -34.34179007672823,
+    "Longitud": -59.06569761646085,
+    "Google maps": "https://www.google.com/maps/place/STORAGE+COMPAT/@-34.3472832,-59.0817524,14.46z/data=!4m6!3m5!1s0x95bb78e4d9364013:0xc834d9630f9bbe57!8m2!3d-34.3428858!4d-59.0664711!16s%2Fg%2F11gdjptb49?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
+  },
+  {
+    "Nombre": "POLITAM",
+    "Sector": "Servicios",
+    "Ciudad": "Exaltación de la cruz",
+    "Tipo": "Sin clasificar",
+    "Latitud": -34.34614673075478,
+    "Longitud": -58.997240213492304,
+    "Google maps": "https://www.google.com/maps?q=-34.34614673075478,-58.997240213492304",
+    "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
+  },
+  {
     "Nombre": "Granja Tres Aroyos",
     "Sector": "Alimentos y bebidas",
     "Ciudad": "Exaltación de la cruz",
     "Tipo": "Sin clasificar",
     "Latitud": -34.25390017170615,
     "Longitud": -58.96501550000001,
-    "Google maps": "https://www.google.com/maps/place/Granja+Campana+-+Granja+Tres+Arroyos/@-34.2540997,-58.9650155,17z/data=!3m1!4b1!4m6!3m5!1s0x95bb710015ba19c7:0x772ccb5b65359355!8m2!3d-34.2540997!4d-58.9650155!16s%2Fg%2F11w2jqmpl6?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Google maps": "https://www.google.com/maps/place/Granja+Campana+-+Granja+Tres+Arroyos/@-34.2540997,-58.9650155,17z/data=!3m1!4b1!4m6!3m5!1s0x95bb710015ba19c7:0x772ccb5b65359355!8m2!3d-34.2540997!4d-58.9650155!16s%2Fg%2F11w2jqmpl6?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
     "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
   },
   {
@@ -1780,7 +1970,7 @@
     "Tipo": "Sin clasificar",
     "Latitud": -34.38683616468446,
     "Longitud": -59.036003571554694,
-    "Google maps": "https://www.google.com/maps/place/Transchemical/@-34.3876939,-59.0360339,16.5z/data=!4m6!3m5!1s0x95bb7eeb5d69afad:0x92c4f31fa999113b!8m2!3d-34.3871172!4d-59.0365548!16s%2Fg%2F11gdtq3xgq?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Google maps": "https://www.google.com/maps/place/Transchemical/@-34.3876939,-59.0360339,16.5z/data=!4m6!3m5!1s0x95bb7eeb5d69afad:0x92c4f31fa999113b!8m2!3d-34.3871172!4d-59.0365548!16s%2Fg%2F11gdtq3xgq?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
     "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
   },
   {
@@ -1790,7 +1980,7 @@
     "Tipo": "Sin clasificar",
     "Latitud": -34.349986662072006,
     "Longitud": -59.00972420662021,
-    "Google maps": "https://www.google.com/maps/place/Parque+Industrial+Ruta+6/@-34.3501151,-59.0106147,17z/data=!3m1!4b1!4m6!3m5!1s0x95bb7bec08141591:0xf5602377c92865e6!8m2!3d-34.3501151!4d-59.0106147!16s%2Fg%2F11cjnpnz6t?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Google maps": "https://www.google.com/maps/place/Parque+Industrial+Ruta+6/@-34.3501151,-59.0106147,17z/data=!3m1!4b1!4m6!3m5!1s0x95bb7bec08141591:0xf5602377c92865e6!8m2!3d-34.3501151!4d-59.0106147!16s%2Fg%2F11cjnpnz6t?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
     "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
   },
   {
@@ -1800,7 +1990,7 @@
     "Tipo": "Sin clasificar",
     "Latitud": -34.31487050085898,
     "Longitud": -59.082353814025446,
-    "Google maps": "https://www.google.com/maps/place/Campari+Argentina/@-34.3150433,-59.0829439,17z/data=!3m1!4b1!4m6!3m5!1s0x95bb781539237a0f:0x9f43945a8a795ed7!8m2!3d-34.3150433!4d-59.0829439!16s%2Fg%2F11b8jcxqs5?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Google maps": "https://www.google.com/maps/place/Campari+Argentina/@-34.3150433,-59.0829439,17z/data=!3m1!4b1!4m6!3m5!1s0x95bb781539237a0f:0x9f43945a8a795ed7!8m2!3d-34.3150433!4d-59.0829439!16s%2Fg%2F11b8jcxqs5?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
     "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
   },
   {
@@ -1810,7 +2000,7 @@
     "Tipo": "Sin clasificar",
     "Latitud": -34.37151268739135,
     "Longitud": -59.13441650597308,
-    "Google maps": "https://www.google.com/maps/place/Pl%C3%A1sticos+Castro+Hnos.+S.A.C.I.F.I.A./@-34.366684,-59.1550083,13.88z/data=!4m6!3m5!1s0x95bb823821125dc1:0xdff831750fda4aa6!8m2!3d-34.3731648!4d-59.1382643!16s%2Fg%2F11bxg5_qbb?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Google maps": "https://www.google.com/maps/place/Pl%C3%A1sticos+Castro+Hnos.+S.A.C.I.F.I.A./@-34.366684,-59.1550083,13.88z/data=!4m6!3m5!1s0x95bb823821125dc1:0xdff831750fda4aa6!8m2!3d-34.3731648!4d-59.1382643!16s%2Fg%2F11bxg5_qbb?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
     "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
   },
   {
@@ -1820,7 +2010,7 @@
     "Tipo": "Sin clasificar",
     "Latitud": -34.346190425457216,
     "Longitud": -59.00701416190755,
-    "Google maps": "https://www.google.com/maps/place/Reteplast+S.R.L/@-34.3464606,-59.0074004,17z/data=!3m1!4b1!4m6!3m5!1s0x95bb7ba58a324f9d:0x9a3e3dbd0e2a7246!8m2!3d-34.3464606!4d-59.0074004!16s%2Fg%2F11v05wdn0j?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Google maps": "https://www.google.com/maps/place/Reteplast+S.R.L/@-34.3464606,-59.0074004,17z/data=!3m1!4b1!4m6!3m5!1s0x95bb7ba58a324f9d:0x9a3e3dbd0e2a7246!8m2!3d-34.3464606!4d-59.0074004!16s%2Fg%2F11v05wdn0j?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
     "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
   },
   {
@@ -1830,7 +2020,7 @@
     "Tipo": "Sin clasificar",
     "Latitud": -34.34909638906023,
     "Longitud": -59.00914454738245,
-    "Google maps": "https://www.google.com/maps/place/34%C2%B020'57.3%22S+59%C2%B000'33.0%22W/@-34.3492425,-59.0117409,17z/data=!3m1!4b1!4m12!1m7!3m6!1s0x95bb7bec08141591:0xf5602377c92865e6!2sParque+Industrial+Ruta+6!8m2!3d-34.3501151!4d-59.0106147!16s%2Fg%2F11cjnpnz6t!3m3!8m2!3d-34.349247!4d-59.009166?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Google maps": "https://www.google.com/maps/place/34%C2%B020'57.3%22S+59%C2%B000'33.0%22W/@-34.3492425,-59.0117409,17z/data=!3m1!4b1!4m12!1m7!3m6!1s0x95bb7bec08141591:0xf5602377c92865e6!2sParque+Industrial+Ruta+6!8m2!3d-34.3501151!4d-59.0106147!16s%2Fg%2F11cjnpnz6t!3m3!8m2!3d-34.349247!4d-59.009166?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
     "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
   },
   {
@@ -1840,7 +2030,7 @@
     "Tipo": "Sin clasificar",
     "Latitud": -34.35444749010857,
     "Longitud": -59.01211459768142,
-    "Google maps": "https://www.google.com/maps/place/Motomel/@-34.3549391,-59.0145685,15.25z/data=!4m6!3m5!1s0x95bb79db93ef0ab9:0xcc42db8e137e0e21!8m2!3d-34.3549914!4d-59.0128188!16s%2Fg%2F11fp8zswwn?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Google maps": "https://www.google.com/maps/place/Motomel/@-34.3549391,-59.0145685,15.25z/data=!4m6!3m5!1s0x95bb79db93ef0ab9:0xcc42db8e137e0e21!8m2!3d-34.3549914!4d-59.0128188!16s%2Fg%2F11fp8zswwn?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
     "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
   },
   {
@@ -1850,7 +2040,7 @@
     "Tipo": "Sin clasificar",
     "Latitud": -34.44770497915073,
     "Longitud": -58.89286643379421,
-    "Google maps": "https://www.google.com/maps/place/Rubica+Inmobiliaria,+Pilar/@-34.4478418,-58.8931727,15.75z/data=!4m6!3m5!1s0x95bc9cc2ecd1fbd3:0xb05fb81ab7ccb40c!8m2!3d-34.447982!4d-58.8927142!16s%2Fg%2F1hc11gdql?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Google maps": "https://www.google.com/maps/place/Rubica+Inmobiliaria,+Pilar/@-34.4478418,-58.8931727,15.75z/data=!4m6!3m5!1s0x95bc9cc2ecd1fbd3:0xb05fb81ab7ccb40c!8m2!3d-34.447982!4d-58.8927142!16s%2Fg%2F1hc11gdql?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
     "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
   },
   {
@@ -1860,7 +2050,7 @@
     "Tipo": "Sin clasificar",
     "Latitud": -34.3466059568929,
     "Longitud": -58.99800187725117,
-    "Google maps": "https://www.google.com/maps/place/farbenlac/@-34.3467344,-58.9983452,17z/data=!4m14!1m7!3m6!1s0x95bb7bf0d9833737:0xd57929e82e0cf2d8!2sfarbenlac!8m2!3d-34.3467344!4d-58.9983452!16s%2Fg%2F11dx8_px1h!3m5!1s0x95bb7bf0d9833737:0xd57929e82e0cf2d8!8m2!3d-34.3467344!4d-58.9983452!16s%2Fg%2F11dx8_px1h?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Google maps": "https://www.google.com/maps/place/farbenlac/@-34.3467344,-58.9983452,17z/data=!4m14!1m7!3m6!1s0x95bb7bf0d9833737:0xd57929e82e0cf2d8!2sfarbenlac!8m2!3d-34.3467344!4d-58.9983452!16s%2Fg%2F11dx8_px1h!3m5!1s0x95bb7bf0d9833737:0xd57929e82e0cf2d8!8m2!3d-34.3467344!4d-58.9983452!16s%2Fg%2F11dx8_px1h?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
     "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
   },
   {
@@ -1870,7 +2060,7 @@
     "Tipo": "Sin clasificar",
     "Latitud": -34.26248846540282,
     "Longitud": -59.28819032751774,
-    "Google maps": "https://www.google.com/maps/place/FRIGOR%C3%8DFICO+EL+FORT%C3%8DN/@-34.2625195,-59.2888126,17z/data=!3m1!4b1!4m6!3m5!1s0x95bb97fedc83d097:0xe87a7eb22dc55d5b!8m2!3d-34.2625195!4d-59.2888126!16s%2Fg%2F11fdw_ng6q?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Google maps": "https://www.google.com/maps/place/FRIGOR%C3%8DFICO+EL+FORT%C3%8DN/@-34.2625195,-59.2888126,17z/data=!3m1!4b1!4m6!3m5!1s0x95bb97fedc83d097:0xe87a7eb22dc55d5b!8m2!3d-34.2625195!4d-59.2888126!16s%2Fg%2F11fdw_ng6q?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
     "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
   },
   {
@@ -1880,7 +2070,7 @@
     "Tipo": "Sin clasificar",
     "Latitud": -34.35026102024516,
     "Longitud": -59.000917734922986,
-    "Google maps": "https://www.google.com/maps/place/Metal%C3%BArgica+RAEI+SA/@-34.3503806,-59.0012396,17z/data=!3m1!4b1!4m6!3m5!1s0x95bb7b9304aba3e5:0x6c32f31e997997d5!8m2!3d-34.3503806!4d-59.0012396!16s%2Fg%2F11s9hlkjrj?entry=ttu&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Google maps": "https://www.google.com/maps/place/Metal%C3%BArgica+RAEI+SA/@-34.3503806,-59.0012396,17z/data=!3m1!4b1!4m6!3m5!1s0x95bb7b9304aba3e5:0x6c32f31e997997d5!8m2!3d-34.3503806!4d-59.0012396!16s%2Fg%2F11s9hlkjrj?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
     "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
   }
 ]
