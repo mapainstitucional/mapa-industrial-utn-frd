@@ -1762,5 +1762,124 @@
     "Web": "https://www.cesviauto.com.ar/index.html",
     "Google maps": "https://www.google.com/maps/place/CESVIAUTO+Centro+de+reciclado+de+veh%C3%ADculos/@-34.4076993,-58.9761927,17z/data=!3m1!4b1!4m6!3m5!1s0x95bb7d983af47fcb:0x3d9afa5dee897796!8m2!3d-34.4076993!4d-58.9761927!16s%2Fg%2F11g9nrp2f0?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D",
     "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
+  },
+  "Nombre": "Granja Tres Aroyos",
+    "Sector": "Alimentos y bebidas",
+    "Ciudad": "Exaltación de la cruz",
+    "Tipo": "Sin clasificar",
+    "Latitud": -34.25390017170615,
+    "Longitud": -58.96501550000001,
+    "Google maps": "https://www.google.com/maps/place/Granja+Campana+-+Granja+Tres+Arroyos/@-34.2540997,-58.9650155,17z/data=!3m1!4b1!4m6!3m5!1s0x95bb710015ba19c7:0x772ccb5b65359355!8m2!3d-34.2540997!4d-58.9650155!16s%2Fg%2F11w2jqmpl6?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
+  },
+  {
+    "Nombre": "TRANSCHEMICAL",
+    "Sector": "Logística y transporte",
+    "Ciudad": "Exaltación de la cruz",
+    "Tipo": "Sin clasificar",
+    "Latitud": -34.38683616468446,
+    "Longitud": -59.036003571554694,
+    "Google maps": "https://www.google.com/maps/place/Transchemical/@-34.3876939,-59.0360339,16.5z/data=!4m6!3m5!1s0x95bb7eeb5d69afad:0x92c4f31fa999113b!8m2!3d-34.3871172!4d-59.0365548!16s%2Fg%2F11gdtq3xgq?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
+  },
+  {
+    "Nombre": "Parque Industrial Ruta 6",
+    "Sector": "Servicios",
+    "Ciudad": "Exaltación de la cruz",
+    "Tipo": "Sin clasificar",
+    "Latitud": -34.349986662072006,
+    "Longitud": -59.00972420662021,
+    "Google maps": "https://www.google.com/maps/place/Parque+Industrial+Ruta+6/@-34.3501151,-59.0106147,17z/data=!3m1!4b1!4m6!3m5!1s0x95bb7bec08141591:0xf5602377c92865e6!8m2!3d-34.3501151!4d-59.0106147!16s%2Fg%2F11cjnpnz6t?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
+  },
+  {
+    "Nombre": "Campari",
+    "Sector": "Alimentos y bebidas",
+    "Ciudad": "Exaltación de la cruz",
+    "Tipo": "Sin clasificar",
+    "Latitud": -34.31487050085898,
+    "Longitud": -59.082353814025446,
+    "Google maps": "https://www.google.com/maps/place/Campari+Argentina/@-34.3150433,-59.0829439,17z/data=!3m1!4b1!4m6!3m5!1s0x95bb781539237a0f:0x9f43945a8a795ed7!8m2!3d-34.3150433!4d-59.0829439!16s%2Fg%2F11b8jcxqs5?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
+  },
+  {
+    "Nombre": "Plásticos Castro Hnos.",
+    "Sector": "Plásticos y envases",
+    "Ciudad": "Exaltación de la cruz",
+    "Tipo": "Sin clasificar",
+    "Latitud": -34.37151268739135,
+    "Longitud": -59.13441650597308,
+    "Google maps": "https://www.google.com/maps/place/Pl%C3%A1sticos+Castro+Hnos.+S.A.C.I.F.I.A./@-34.366684,-59.1550083,13.88z/data=!4m6!3m5!1s0x95bb823821125dc1:0xdff831750fda4aa6!8m2!3d-34.3731648!4d-59.1382643!16s%2Fg%2F11bxg5_qbb?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
+  },
+  {
+    "Nombre": "RETEPLAST",
+    "Sector": "Plásticos y envases",
+    "Ciudad": "Exaltación de la cruz",
+    "Tipo": "Sin clasificar",
+    "Latitud": -34.346190425457216,
+    "Longitud": -59.00701416190755,
+    "Google maps": "https://www.google.com/maps/place/Reteplast+S.R.L/@-34.3464606,-59.0074004,17z/data=!3m1!4b1!4m6!3m5!1s0x95bb7ba58a324f9d:0x9a3e3dbd0e2a7246!8m2!3d-34.3464606!4d-59.0074004!16s%2Fg%2F11v05wdn0j?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
+  },
+  {
+    "Nombre": "Perfiles&Servicios",
+    "Sector": "Construcción e ingeniería",
+    "Ciudad": "Exaltación de la cruz",
+    "Tipo": "Sin clasificar",
+    "Latitud": -34.34909638906023,
+    "Longitud": -59.00914454738245,
+    "Google maps": "https://www.google.com/maps/place/34%C2%B020'57.3%22S+59%C2%B000'33.0%22W/@-34.3492425,-59.0117409,17z/data=!3m1!4b1!4m12!1m7!3m6!1s0x95bb7bec08141591:0xf5602377c92865e6!2sParque+Industrial+Ruta+6!8m2!3d-34.3501151!4d-59.0106147!16s%2Fg%2F11cjnpnz6t!3m3!8m2!3d-34.349247!4d-59.009166?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
+  },
+  {
+    "Nombre": "MOTOMEL",
+    "Sector": "Automotriz y autopartes",
+    "Ciudad": "Exaltación de la cruz",
+    "Tipo": "Sin clasificar",
+    "Latitud": -34.35444749010857,
+    "Longitud": -59.01211459768142,
+    "Google maps": "https://www.google.com/maps/place/Motomel/@-34.3549391,-59.0145685,15.25z/data=!4m6!3m5!1s0x95bb79db93ef0ab9:0xcc42db8e137e0e21!8m2!3d-34.3549914!4d-59.0128188!16s%2Fg%2F11fp8zswwn?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
+  },
+  {
+    "Nombre": "RUBICA INMOBILIARIA",
+    "Sector": "Servicios",
+    "Ciudad": "Exaltación de la cruz",
+    "Tipo": "Sin clasificar",
+    "Latitud": -34.44770497915073,
+    "Longitud": -58.89286643379421,
+    "Google maps": "https://www.google.com/maps/place/Rubica+Inmobiliaria,+Pilar/@-34.4478418,-58.8931727,15.75z/data=!4m6!3m5!1s0x95bc9cc2ecd1fbd3:0xb05fb81ab7ccb40c!8m2!3d-34.447982!4d-58.8927142!16s%2Fg%2F1hc11gdql?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
+  },
+  {
+    "Nombre": "Pinturas Farbenlac",
+    "Sector": "Química",
+    "Ciudad": "Exaltación de la cruz",
+    "Tipo": "Sin clasificar",
+    "Latitud": -34.3466059568929,
+    "Longitud": -58.99800187725117,
+    "Google maps": "https://www.google.com/maps/place/farbenlac/@-34.3467344,-58.9983452,17z/data=!4m14!1m7!3m6!1s0x95bb7bf0d9833737:0xd57929e82e0cf2d8!2sfarbenlac!8m2!3d-34.3467344!4d-58.9983452!16s%2Fg%2F11dx8_px1h!3m5!1s0x95bb7bf0d9833737:0xd57929e82e0cf2d8!8m2!3d-34.3467344!4d-58.9983452!16s%2Fg%2F11dx8_px1h?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
+  },
+  {
+    "Nombre": "Granja El Fortín",
+    "Sector": "Alimentos y bebidas",
+    "Ciudad": "Exaltación de la cruz",
+    "Tipo": "Sin clasificar",
+    "Latitud": -34.26248846540282,
+    "Longitud": -59.28819032751774,
+    "Google maps": "https://www.google.com/maps/place/FRIGOR%C3%8DFICO+EL+FORT%C3%8DN/@-34.2625195,-59.2888126,17z/data=!3m1!4b1!4m6!3m5!1s0x95bb97fedc83d097:0xe87a7eb22dc55d5b!8m2!3d-34.2625195!4d-59.2888126!16s%2Fg%2F11fdw_ng6q?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
+  },
+  {
+    "Nombre": "Metalúrgica RAEI",
+    "Sector": "Metalurgia y siderurgia",
+    "Ciudad": "Exaltación de la cruz",
+    "Tipo": "Sin clasificar",
+    "Latitud": -34.35026102024516,
+    "Longitud": -59.000917734922986,
+    "Google maps": "https://www.google.com/maps/place/Metal%C3%BArgica+RAEI+SA/@-34.3503806,-59.0012396,17z/data=!3m1!4b1!4m6!3m5!1s0x95bb7b9304aba3e5:0x6c32f31e997997d5!8m2!3d-34.3503806!4d-59.0012396!16s%2Fg%2F11s9hlkjrj?entry=ttu\\&g_ep=EgoyMDI2MTAxOS4wIKXMDSoASAFQAw%3D%3D",
+    "Cuestionario": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=6Nx9Z9me9k2YUxVvA9aiWA04m3y7cZxErU3i1owYjlZUQ1pSVUJaQVU4TlVKWkxCQlpEMkpKNjNCNy4u"
   }
 ]
