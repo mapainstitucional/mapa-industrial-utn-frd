@@ -412,19 +412,19 @@
             sobre las empresas, industrias y actividades
             productivas de Campana, Zárate y la región,
             facilitando su consulta mediante una
-            plataforma geográfica interactiva.
+            plataforma interactiva.
         </p>
 
         <p>
             Esta herramienta busca contribuir al conocimiento
-            del entramado productivo regional y favorecer
+            de la industria regional y favorecer
             la vinculación entre la universidad,
             las empresas y la comunidad.
         </p>
 
         <p class="acerca-nota">
             La información publicada tiene carácter
-            orientativo y puede estar sujeta a actualizaciones.
+            orientativo.
         </p>
 
     </div>
@@ -584,11 +584,12 @@
             const equivalencias = {
                 "construccion": "Construcción e ingeniería",
                 "energetico": "Energía",
-                "industrial automotriz y de motovehiculos":
-                    "Automotriz y autopartes"
+                "industrial automotriz y de motovehiculos": "Automotriz y autopartes"
             };
-
-            return equivalencias[normalizarBusqueda(sector)] || sector;
+            const clave = normalizarBusqueda(sector);
+            const canonico = Object.keys(emojisSector).find(nombre => normalizarBusqueda(nombre) === clave);
+            if (canonico) return canonico.charAt(0).toUpperCase() + canonico.slice(1);
+            return equivalencias[clave] || sector;
         }
 
         function unificarCiudadFiltro(ciudad) {
@@ -651,7 +652,16 @@
             "manufactura y otros sectores": "🏭",
             "servicios": "🏢",
             "educacion": "🎓",
-            "mineria": "⛏️"
+            "mineria": "⛏️",
+            "farmaceutica y biotecnologia": "💊",
+            "plasticos y envases": "📦",
+            "textil": "🧵",
+            "papel y grafica": "📄",
+            "caucho y adhesivos": "🧴",
+            "salud y equipamiento medico": "🏥",
+            "higiene y cuidado personal": "🧼",
+            "vidrio y ceramica": "🏺",
+            "gases industriales": "💨"
         };
 
         function emojiDelSector(sector) {
@@ -674,7 +684,16 @@
             "manufactura y otros sectores": "#64748b",
             "servicios": "#0d9488",
             "educacion": "#db2777",
-            "mineria": "#78716c"
+            "mineria": "#78716c",
+            "farmaceutica y biotecnologia": "#be185d",
+            "plasticos y envases": "#0891b2",
+            "textil": "#c026d3",
+            "papel y grafica": "#ca8a04",
+            "caucho y adhesivos": "#7c3aed",
+            "salud y equipamiento medico": "#e11d48",
+            "higiene y cuidado personal": "#0d9488",
+            "vidrio y ceramica": "#b45309",
+            "gases industriales": "#475569"
         };
         function colorDelSector(sector) { return coloresSector[normalizarBusqueda(sector)] || "#009b86"; }
 
