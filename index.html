@@ -24,7 +24,19 @@
             --fondo: #f5f8f7;
         }
         * { box-sizing: border-box; }
-        body { margin: 0; font-family: Arial, sans-serif; background: var(--fondo); color: var(--texto); }
+        body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(
+        135deg,
+        #f4faf5 0%,
+        #e1f0e4 35%,
+        #c6e5ce 70%,
+        #a8d5b5 100%
+    );
+    background-attachment: fixed;
+    color: var(--texto);
+}}
         .contenedor-pagina { max-width: 1500px; margin: 0 auto; padding: 22px 24px 32px; }
         .encabezado-mapa { display: flex; align-items: center; gap: 32px; padding: 20px 26px; margin-bottom: 18px; background: white; border: 1px solid var(--borde); border-left: 5px solid var(--verde); border-radius: 12px; }
         .enlace-logo-utn { display: block; flex: 0 0 auto; }
